@@ -1,7 +1,6 @@
-import { Button } from "@chakra-ui/react"
 import Header from "../../components/Header"
 
-function Main() {
+function Characters() {
   return (
     <>
       <Header />
@@ -9,4 +8,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Characters
