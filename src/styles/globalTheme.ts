@@ -12,7 +12,7 @@ export const globalTheme = extendTheme({
     global: ({ colorMode }: GlobalStyleProps) => ({
       'html, body': {
         fontFamily: 'Roboto',
-        backgroundColor: colorMode === 'dark' ? 'gray.900' : 'gray.200',
+        backgroundColor: colorMode === 'dark' ? 'gray.900' : 'gray.50',
       }
     })
   },
