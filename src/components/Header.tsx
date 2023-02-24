@@ -13,6 +13,9 @@ function Header(){
       minHeight="60px"
       padding="0px 1.5rem"
       width="100%"
+      borderBottomColor={useColorModeValue('gray.200', 'gray.800')}
+      borderBottomWidth={1}
+      borderBottomStyle="solid"
     >
       <Text 
         fontSize={20}
@@ -30,7 +33,7 @@ function Header(){
         <Button
           width="15px"
           onClick={toggleColorMode}
-          bgColor={useColorModeValue('gray.300', 'gray.800')}
+          bgColor={useColorModeValue('gray.00', 'gray.800')}
         >
           {colorMode === 'light' ? '🌞' : '🌚'}
         </Button>
