@@ -1,15 +1,16 @@
-import { BrowserRouter, Route, Routes as Router } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes as Router } from "react-router-dom";
 import Characters from "./pages/Characters";
-import Main from "./pages/Main";
+import Episodes from "./pages/Episodes";
+import Locations from "./pages/Locations";
 
 function Routes(){
   return (
     <BrowserRouter>
       <Router>
-        <Route element={<Main />} path="/" />
+        <Route element={<Navigate to="/characters" />} path="/" />
         <Route element={<Characters />} path="/characters" />
-        <Route element={<div> LOCATION </div>} path="/location" />
-        <Route element={<div> EPISODES </div>} path="/episodes" />
+        <Route element={<Locations />} path="/locations" />
+        <Route element={<Episodes />} path="/episodes" />
       </Router>
     </BrowserRouter>
   );

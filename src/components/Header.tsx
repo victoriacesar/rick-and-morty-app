@@ -14,16 +14,12 @@ function Header(){
       padding="0px 1.5rem"
       width="100%"
     >
-      <Link 
-        as={NavLink} 
-        to="/"
+      <Text 
         fontSize={20}
-        _activeLink={{
-          fontWeight: 700,
-        }}
+        fontWeight={700}
       >
         R&M/S
-      </Link>
+      </Text>
       <Flex
         alignItems="center"
         gap="10px"
