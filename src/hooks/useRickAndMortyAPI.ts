@@ -17,7 +17,7 @@ const useRickAndMortyAPI = <T extends keyof Endpoints>(endpoint: T) => {
   
   const APILink = "https://rickandmortyapi.com/api/";
   const getAPI = useCallback(
-    async ({ pageParam = 40 }) => {
+    async ({ pageParam = 1 }) => {
       const { data } = await axios.get(`${APILink}/${endpoint}`, {
         params: {
           page: pageParam
