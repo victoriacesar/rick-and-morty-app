@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Image, Link, Text, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
+import NavButton from "./NavButton"
 
 function Header(){
   const { colorMode, toggleColorMode } = useColorMode()
@@ -27,15 +28,9 @@ function Header(){
         alignItems="center"
         gap="10px"
       >
-        <Link 
-          as={NavLink} 
-          to="/characters"
-          _activeLink={{
-            fontWeight: 700,
-          }}
-        >
-          CHARACTERS
-        </Link>
+        <NavButton path="/characters" text="Characters" />
+        <NavButton path="/locations" text="Location" />
+        <NavButton path="/episodes" text="Episodes" />
         <Button
           width="15px"
           onClick={toggleColorMode}
