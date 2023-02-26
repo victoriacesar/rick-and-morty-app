@@ -1,7 +1,8 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Spinner, Text } from "@chakra-ui/react";
 import { useCallback, useEffect, useRef } from "react";
 import CardCharacters from "../../components/Cards/CardCharacters";
 import Header from "../../components/Header";
+import Loader from "../../components/Loader";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { type Character } from "../../utils/interfaces";
 
@@ -35,11 +36,7 @@ function Characters() {
   }, [fetchNextPage, hasNextPage, handleObserver]);
 
   if (isLoading) {
-    return (
-      <Flex alignItems="center" justifyContent="center" margin="0px auto">
-        <Text>Carregando...</Text>
-      </Flex>
-    );
+    return <Loader />
   }
 
   return (

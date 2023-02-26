@@ -2,6 +2,7 @@ import { Flex, Text } from "@chakra-ui/react";
 import { useCallback, useEffect, useRef } from "react";
 import CardLocation from "../../components/Cards/CardLocation";
 import Header from "../../components/Header";
+import Loader from "../../components/Loader";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { Location } from "../../utils/interfaces";
 
@@ -40,11 +41,7 @@ function Locations() {
   }, [fetchNextPage, hasNextPage, handleObserver]);
 
   if (isLoading) {
-    return (
-      <Flex alignItems="center" justifyContent="center" margin="0px auto">
-        <Text>Carregando...</Text>
-      </Flex>
-    );
+    return <Loader />
   }
 
   return (
