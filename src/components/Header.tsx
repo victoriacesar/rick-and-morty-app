@@ -5,7 +5,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import NavButton from "./NavButton";
+import NavButton from "@components/NavButton";
 
 function Header() {
   const { colorMode, toggleColorMode } = useColorMode();

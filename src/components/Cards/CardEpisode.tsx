@@ -9,9 +9,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useQueries } from "@tanstack/react-query";
-import { scrollStyle } from "../../styles/globalTheme";
-import { fetchResident } from "../../utils/functions";
-import { type Character } from "../../utils/interfaces";
+import { scrollStyle } from "@styles/globalTheme";
+import { fetchResident } from "@utils/functions";
+import { type Character } from "@utils/interfaces";
 
 interface ICardEpisode {
   name: string;

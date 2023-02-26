@@ -8,7 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { type Status } from "../../utils/interfaces";
+import { type Status } from "@utils/interfaces";
 
 interface ICardCharacters {
   name: string;
