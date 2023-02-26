@@ -1,8 +1,9 @@
-import { Flex, Spinner, Text } from "@chakra-ui/react";
-import { useCallback, useEffect, useRef } from "react";
-import CardCharacters from "../../components/Cards/CardCharacters";
-import Header from "../../components/Header";
-import Loader from "../../components/Loader";
+import { Flex } from "@chakra-ui/react";
+import {
+  Header,
+  Loader,
+  CardCharacters
+} from '../../components';
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { type Character } from "../../utils/interfaces";

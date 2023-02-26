@@ -1,7 +1,9 @@
 import { Flex } from "@chakra-ui/react";
-import CardEpisode from "../../components/Cards/CardEpisode";
-import Header from "../../components/Header";
-import Loader from "../../components/Loader";
+import {
+  Header,
+  Loader,
+  CardEpisode
+} from '../../components';
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { Episode } from "../../utils/interfaces";
