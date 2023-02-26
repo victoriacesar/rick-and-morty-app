@@ -13,6 +13,10 @@
 <p>This project is a Rick And Morty app, using <a href="https://rickandmortyapi.com/">Rick and Morty API</a>, the design of the app was also inspired in the api website (because i liked very much).<p>
 <p>It was made for practice my skills in the front-end, the idea was to make a clean and basic app, but with very good and interesting code. Also, one nice thing i did in this project was to add conventional commit, to make this i used Commitlint, Husky and Commitizen.</p>
 
+<p>You can see the deployment here: <a href="https://rick-and-morty-app-mocha.vercel.app/">Rick and Morty App's deploy</a></p>
+
+<img src="./src/assets/rick-and-morty-image.png"></img>
+
 ### Technologies
 
 The following technologies were used in this project:
