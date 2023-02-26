@@ -1,9 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import {
-  Header,
-  Loader,
-  CardCharacters
-} from '../../components';
+import { Header, Loader, CardCharacters } from "../../components";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { type Character } from "../../utils/interfaces";
@@ -15,7 +11,7 @@ function Characters() {
   const { observerElem } = useIntersectionObserver(hasNextPage, fetchNextPage);
 
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (

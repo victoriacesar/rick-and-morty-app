@@ -11,7 +11,7 @@ import {
 import { useQueries } from "@tanstack/react-query";
 import { scrollStyle } from "../../styles/globalTheme";
 import { fetchResident } from "../../utils/functions";
-import { Character } from "../../utils/interfaces";
+import { type Character } from "../../utils/interfaces";
 
 interface ICardEpisode {
   name: string;
@@ -25,7 +25,7 @@ function CardEpisode({ name, airDate, characters, episode }: ICardEpisode) {
     queries: characters.map((character) => {
       return {
         queryKey: ["character", character],
-        queryFn: () => fetchResident(character),
+        queryFn: async () => fetchResident(character),
       };
     }),
   });

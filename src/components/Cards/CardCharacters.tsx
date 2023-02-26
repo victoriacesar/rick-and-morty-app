@@ -8,7 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Status } from "../../utils/interfaces";
+import { type Status } from "../../utils/interfaces";
 
 interface ICardCharacters {
   name: string;
@@ -19,11 +19,14 @@ interface ICardCharacters {
   origin: string;
 }
 
-function getTypeColor(type: string){
-  switch(type){
-    case 'Alive': return '#55CC44';
-    case 'Dead': return '#D63D2E';
-    default: return '#DDDDDD';
+function getTypeColor(type: string) {
+  switch (type) {
+    case "Alive":
+      return "#55CC44";
+    case "Dead":
+      return "#D63D2E";
+    default:
+      return "#DDDDDD";
   }
 }
 
@@ -60,13 +63,15 @@ function CardCharacters({
             <Flex alignItems="center" gap="5px">
               <Box
                 style={{
-                  width: '8px',
-                  height: '8px',
+                  width: "8px",
+                  height: "8px",
                   background: getTypeColor(status),
-                  borderRadius: '50%',
+                  borderRadius: "50%",
                 }}
               />
-              <Text fontSize="14px" color={textColor}>{status} - {species}</Text>
+              <Text fontSize="14px" color={textColor}>
+                {status} - {species}
+              </Text>
             </Flex>
           </Flex>
           <Flex flexDirection="column">

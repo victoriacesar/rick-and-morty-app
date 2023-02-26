@@ -1,26 +1,17 @@
 import { Flex } from "@chakra-ui/react";
-import {
-  Header,
-  Loader,
-  CardLocation
-} from '../../components';
+import { Header, Loader, CardLocation } from "../../components";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
-import { Location } from "../../utils/interfaces";
+import { type Location } from "../../utils/interfaces";
 
 function Locations() {
-  const {
-    data,
-    isLoading,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-  } = useRickAndMortyAPI("location");
+  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useRickAndMortyAPI("location");
 
   const { observerElem } = useIntersectionObserver(hasNextPage, fetchNextPage);
 
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (

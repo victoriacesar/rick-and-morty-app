@@ -11,7 +11,7 @@ import {
 import { useQueries } from "@tanstack/react-query";
 import { scrollStyle } from "../../styles/globalTheme";
 import { fetchResident } from "../../utils/functions";
-import { Character } from "../../utils/interfaces";
+import { type Character } from "../../utils/interfaces";
 
 interface ICardLocation {
   name: string;
@@ -26,7 +26,7 @@ function CardLocation({ name, type, dimension, residents }: ICardLocation) {
     queries: residents.map((resident) => {
       return {
         queryKey: ["resident", resident],
-        queryFn: () => fetchResident(resident),
+        queryFn: async () => fetchResident(resident),
       };
     }),
   });

@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef } from "react";
 
 const useIntersectionObserver = (
   hasNextPage: boolean | undefined,
-  fetchNextPage: any
-  ) => {
+  fetchNextPage: any,
+) => {
   const observerElem = useRef<HTMLDivElement>(null);
 
   const handleObserver = useCallback(
@@ -31,7 +31,7 @@ const useIntersectionObserver = (
 
   return {
     observerElem,
-  }
+  };
 };
 
 export default useIntersectionObserver;
