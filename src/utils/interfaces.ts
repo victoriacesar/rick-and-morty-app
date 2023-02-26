@@ -5,8 +5,8 @@ export interface BaseSearchResponse<T> {
 export interface Info {
   count: number;
   pages: number;
-  next?: string
-  prev?: string
+  next?: string;
+  prev?: string;
 }
 export interface Character {
   id: number;

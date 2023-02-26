@@ -1,9 +1,14 @@
-import { BrowserRouter, Navigate, Route, Routes as Router } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes as Router,
+} from "react-router-dom";
 import Characters from "./pages/Characters";
 import Episodes from "./pages/Episodes";
 import Locations from "./pages/Locations";
 
-function Routes(){
+function Routes() {
   return (
     <BrowserRouter>
       <Router>
@@ -16,4 +21,4 @@ function Routes(){
   );
 }
 
-export default Routes
+export default Routes;

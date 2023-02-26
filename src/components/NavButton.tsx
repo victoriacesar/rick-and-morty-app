@@ -1,19 +1,16 @@
-import { LightMode, Link, useColorModeValue } from "@chakra-ui/react"
-import { NavLink } from "react-router-dom"
+import { LightMode, Link, useColorModeValue } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
-type NavButtonProps = {
+interface NavButtonProps {
   path: string;
   text: string;
 }
 
-function NavButton({
-  path,
-  text,
-}: NavButtonProps){
+function NavButton({ path, text }: NavButtonProps) {
   return (
     <LightMode>
-      <Link 
-        as={NavLink} 
+      <Link
+        as={NavLink}
         to={path}
         borderWidth={1}
         borderStyle="solid"
@@ -24,7 +21,7 @@ function NavButton({
         color={useColorModeValue("gray.900", "white")}
         _activeLink={{
           bgColor: "yellow.500",
-          color: "white"
+          color: "white",
         }}
         _hover={{
           filter: "brightness(0.9)",
@@ -34,7 +31,7 @@ function NavButton({
         {text}
       </Link>
     </LightMode>
-  )
-};
+  );
+}
 
-export default NavButton
+export default NavButton;
