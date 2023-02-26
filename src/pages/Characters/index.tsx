@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from "react";
 import CardCharacters from "../../components/Cards/CardCharacters";
 import Header from "../../components/Header";
 import Loader from "../../components/Loader";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { type Character } from "../../utils/interfaces";
 
@@ -10,30 +11,7 @@ function Characters() {
   const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useRickAndMortyAPI("character");
 
-  const observerElem = useRef<HTMLDivElement>(null);
-
-  const handleObserver = useCallback(
-    (entries: any) => {
-      const [target] = entries;
-      if (target.isIntersecting && hasNextPage) {
-        fetchNextPage();
-      }
-    },
-    [fetchNextPage, hasNextPage],
-  );
-
-  useEffect(() => {
-    if (observerElem.current == null) return;
-
-    const element = observerElem?.current;
-    const option = { threshold: 0 };
-
-    const observer = new IntersectionObserver(handleObserver, option);
-    observer.observe(element);
-    return () => {
-      observer.unobserve(element);
-    };
-  }, [fetchNextPage, hasNextPage, handleObserver]);
+  const { observerElem } = useIntersectionObserver(hasNextPage, fetchNextPage);
 
   if (isLoading) {
     return <Loader />

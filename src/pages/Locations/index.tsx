@@ -1,8 +1,8 @@
-import { Flex, Text } from "@chakra-ui/react";
-import { useCallback, useEffect, useRef } from "react";
+import { Flex } from "@chakra-ui/react";
 import CardLocation from "../../components/Cards/CardLocation";
 import Header from "../../components/Header";
 import Loader from "../../components/Loader";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useRickAndMortyAPI from "../../hooks/useRickAndMortyAPI";
 import { Location } from "../../utils/interfaces";
 
@@ -15,30 +15,7 @@ function Locations() {
     isFetchingNextPage,
   } = useRickAndMortyAPI("location");
 
-  const observerElem = useRef<HTMLDivElement>(null);
-
-  const handleObserver = useCallback(
-    (entries: any) => {
-      const [target] = entries;
-      if (target.isIntersecting && hasNextPage) {
-        fetchNextPage();
-      }
-    },
-    [fetchNextPage, hasNextPage],
-  );
-
-  useEffect(() => {
-    if (observerElem.current == null) return;
-
-    const element = observerElem?.current;
-    const option = { threshold: 0 };
-
-    const observer = new IntersectionObserver(handleObserver, option);
-    observer.observe(element);
-    return () => {
-      observer.unobserve(element);
-    };
-  }, [fetchNextPage, hasNextPage, handleObserver]);
+  const { observerElem } = useIntersectionObserver(hasNextPage, fetchNextPage);
 
   if (isLoading) {
     return <Loader />
