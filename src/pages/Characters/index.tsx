@@ -19,7 +19,7 @@ function Characters() {
       <Header />
       <Flex maxW="100vw" padding="2rem 1.5rem">
         <Flex wrap="wrap" gap={15} alignItems="center" justifyContent="center">
-          {data.map((elem: Character) => {
+          {data?.map((elem: Character) => {
             return (
               <CardCharacters
                 imageSrc={elem.image}

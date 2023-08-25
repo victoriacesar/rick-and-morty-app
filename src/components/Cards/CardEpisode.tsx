@@ -75,7 +75,7 @@ function CardEpisode({ name, airDate, characters, episode }: ICardEpisode) {
             >
               {characterInfo.length &&
                 characterInfo?.map((elem: Character) => {
-                  return (
+                  return elem ? (
                     <Box key={elem?.id} width="80px" height="80px">
                       <Image
                         objectFit="cover"
@@ -86,7 +86,7 @@ function CardEpisode({ name, airDate, characters, episode }: ICardEpisode) {
                         loading="lazy"
                       />
                     </Box>
-                  );
+                  ) : null;
                 })}
             </Flex>
           </Flex>

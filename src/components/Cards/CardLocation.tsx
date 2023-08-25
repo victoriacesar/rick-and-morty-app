@@ -73,7 +73,7 @@ function CardLocation({ name, type, dimension, residents }: ICardLocation) {
             >
               {residentsInfo.length &&
                 residentsInfo?.map((elem: Character) => {
-                  return (
+                  return elem ? (
                     <Box key={elem?.id} width="80px" height="80px">
                       <Image
                         objectFit="cover"
@@ -84,7 +84,7 @@ function CardLocation({ name, type, dimension, residents }: ICardLocation) {
                         loading="lazy"
                       />
                     </Box>
-                  );
+                  ) : null;
                 })}
             </Flex>
           </Flex>

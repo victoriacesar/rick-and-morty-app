@@ -43,9 +43,10 @@ const useRickAndMortyAPI = <T extends keyof Endpoints>(endpoint: T) => {
   return {
     isLoading,
     data:
-      data == null
+      data === null
         ? []
-        : data.pages.reduce<Array<Endpoints[T]>>((acc, curr) => {
+        : data?.pages.reduce<Array<Endpoints[T]>>((acc, curr) => {
+            console.log(acc, curr.data);
             return [...acc, ...curr.data];
           }, []),
     fetchNextPage,

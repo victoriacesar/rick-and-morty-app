@@ -19,7 +19,7 @@ function Locations() {
       <Header />
       <Flex maxW="100vw" padding="2rem 1.5rem">
         <Flex wrap="wrap" gap={15} alignItems="center" justifyContent="center">
-          {data.map((elem: Location) => {
+          {data?.map((elem: Location) => {
             return (
               <CardLocation
                 key={elem.id}
